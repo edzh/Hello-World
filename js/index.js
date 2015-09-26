@@ -4,6 +4,7 @@ let scene;
 let camera;
 let renderer;
 let circle;
+let controls;
 const keys = [];
 const velocity = new THREE.Vector3();
 
@@ -60,7 +61,7 @@ function init() {
   });
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.setClearColor(0x0000ff, 0.3);
-  const controls = new THREE.OrbitControls( camera, renderer.domElement );
+  controls = new THREE.OrbitControls( camera, renderer.domElement );
   document.body.appendChild( renderer.domElement );
 }
 
@@ -91,6 +92,11 @@ function animate() {
 
 document.addEventListener('keydown', function(event) {
   keys[event.keyCode] = true;
+  if (event.keyCode === 82) {
+    circle.position.set(0, 0, 0);
+    velocity.set(0, 0, 0);
+    controls.reset();
+  }
 });
 
 document.addEventListener('keyup', function(event) {
