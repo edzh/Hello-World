@@ -18,6 +18,7 @@
   "homepage": "https://github.com/edzh/Hello-World#readme",
   "dependencies": {
     "browser-sync": "^2.9.6",
+    "cannon": "^0.6.2",
     "three.js": "^0.72.0"
   },
   "devDependencies": {
